@@ -1,0 +1,59 @@
+# Utah employers pulled directly from their job boards. Every entry was checked against the live API.
+# The location filter (SL County + Utah County) is applied to everything, so national companies are fine here.
+#
+# allow_remote_us: also keep fully-remote US roles (use for Utah-headquartered companies only).
+#
+# To add a company, find its careers page and look at the job links:
+#   boards.greenhouse.io/<token> or job-boards.greenhouse.io/<token>  -> greenhouse
+#   jobs.lever.co/<token>                                               -> lever
+#   jobs.ashbyhq.com/<token>                                            -> ashby
+#   jobs.smartrecruiters.com/<token>                                    -> smartrecruiters
+#   <tenant>.wd<N>.myworkdayjobs.com/<site>                             -> workday
+
+greenhouse:
+  - {token: qualtrics, company: Qualtrics, allow_remote_us: true}
+  - {token: lucidsoftware, company: Lucid Software, allow_remote_us: true}
+  - {token: recursionpharmaceuticals, company: Recursion, allow_remote_us: true}
+  - {token: awardco, company: Awardco, allow_remote_us: true}
+  - {token: canopytax, company: Canopy, allow_remote_us: true}
+  - {token: podium81, company: Podium, allow_remote_us: true}
+  - {token: galileo, company: Galileo Financial Technologies, allow_remote_us: true}
+  - {token: taxbit, company: TaxBit, allow_remote_us: true}
+  - {token: sofi, company: SoFi}
+  - {token: billcom, company: BILL}
+  - {token: ifit, company: iFIT}
+  - {token: degreed, company: Degreed}
+
+lever:
+  - {token: filevine, company: Filevine, allow_remote_us: true}
+  - {token: pattern, company: Pattern, allow_remote_us: true}
+  - {token: entrata, company: Entrata, allow_remote_us: true}
+  - {token: neighbor, company: Neighbor, allow_remote_us: true}
+  - {token: gabbwireless, company: Gabb, allow_remote_us: true}
+  - {token: nomihealth, company: Nomi Health, allow_remote_us: true}
+
+ashby:
+  - {token: weave, company: Weave, allow_remote_us: true}
+  - {token: instructure, company: Instructure, allow_remote_us: true}
+
+smartrecruiters:
+  - {token: cricut, company: Cricut, allow_remote_us: true}
+  - {token: hirevue, company: HireVue, allow_remote_us: true}
+  - {token: vivint, company: Vivint, allow_remote_us: true}
+
+# searches: Workday keyword searches to run (default ["Utah"]); "" lists every job.
+workday:
+  - {tenant: pluralsight, wd: 1, site: Careers, company: Pluralsight, searches: [""], allow_remote_us: true}
+  - {tenant: healthcatalyst, wd: 5, site: healthcatalystcareers, company: Health Catalyst, searches: [""], allow_remote_us: true}
+  - {tenant: progleasing, wd: 5, site: progleasingcareers, company: Progressive Leasing, searches: [""], allow_remote_us: true}
+  - {tenant: domo, wd: 12, site: domocareers, company: Domo, searches: [""], allow_remote_us: true}
+  - {tenant: nuskin, wd: 5, site: nuskin, company: Nu Skin, searches: [""]}
+  - {tenant: chghealthcare, wd: 1, site: External, company: CHG Healthcare, searches: [""]}
+  - {tenant: ultradent, wd: 1, site: Careers, company: Ultradent, searches: [""]}
+  - {tenant: adobe, wd: 5, site: external_experienced, company: Adobe}
+  - {tenant: ebay, wd: 5, site: apply, company: eBay}
+  - {tenant: wf, wd: 1, site: WellsFargoJobs, company: Wells Fargo}
+  - {tenant: ngc, wd: 1, site: Northrop_Grumman_External_Site, company: Northrop Grumman}
+  - {tenant: boeing, wd: 1, site: EXTERNAL_CAREERS, company: Boeing}
+  - {tenant: imh, wd: 108, site: IntermountainCareers, company: Intermountain Health,
+     searches: ["information technology", "software", "data analyst", "developer", "engineer"]}
