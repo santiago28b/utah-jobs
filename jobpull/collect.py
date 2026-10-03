@@ -35,6 +35,8 @@ FETCHERS = {
 # Aggregators with API quotas: minimum minutes between runs.
 MIN_INTERVAL = {"adzuna": 110, "usajobs": 55}
 AGGREGATORS = {"adzuna", "usajobs"}
+# Only save jobs whose fit score is above this.
+MIN_SCORE = 70
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -71,6 +73,8 @@ def to_record(raw: RawJob, board: Board) -> tuple[dict | None, str]:
     v = filters.evaluate(raw.title, raw.description, raw.employment_type, raw.seniority_hint)
     if not v.ok:
         return None, v.reason
+    if v.score <= MIN_SCORE:
+        return None, f"score {v.score} <= {MIN_SCORE}"
     return {
         "source": raw.source,
         "external_id": raw.external_id,
